@@ -150,3 +150,73 @@
 .logo img {
   filter: invert(1);
 }
+
+
+/* FSO starts here */
+.your-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.table-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+select, input, button {
+  margin: 5px;
+  padding: 8px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.your-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.dropdown-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+label {
+  margin-right: 10px;
+  font-size: 16px;
+  /* background: linear-gradient(101.11deg,#f087ff 14.47%,#6e1fce 39.43%,rgba(110,31,206,.1) 76.77%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;*/
+}
+
+/* ... (Rest of the CSS remains unchanged) */
+

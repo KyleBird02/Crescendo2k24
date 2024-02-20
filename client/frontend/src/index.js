@@ -3,7 +3,11 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { Sepolia } from "@thirdweb-dev/chains";
 import "./styles/globals.css";
+import FSO from "./components/FSO/FSO";
+import Test2 from "./components/Test2";
+import Navbar from "./components/Navbar";
 
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
@@ -15,10 +19,12 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <ThirdwebProvider
-      activeChain={activeChain}
-      clientId={process.env.REACT_APP_TEMPLATE_CLIENT_ID}
+      activeChain={Sepolia}
+      clientId={"302d02688f009be7e80db778a9a37324"}
     >
-      <App />
+      {/* <FSO /> */}
+      <Navbar/>
+      <Test2/>
     </ThirdwebProvider>
   </React.StrictMode>
 );
