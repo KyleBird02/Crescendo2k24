@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useContract, useContractWrite } from "@thirdweb-dev/react";
 
 export default function Test2() {
-  const { contract } = useContract("0x853Ef1936A4b8B436554b0452CB805030E9A0Dbb");
+  const { contract } = useContract("0xb5e7BbeAcA7154F8E3AaB641eC4DdD1Bde9Ba5DF");
   const { mutateAsync: addProduct, isLoading } = useContractWrite(contract, "addProduct");
 
   const [companyName, setCompanyName] = useState("");
