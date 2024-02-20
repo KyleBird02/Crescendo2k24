@@ -18,8 +18,8 @@ const fakeItems = [
   {
     companyName: "Brittania",
     productName: "Butter Cookies",
-    substances: ["Butter", "Sugars"],
-    values: ["50", "25"],
+    substances: ["Butter", "Sugars", "Sugars", "Sugars", "Sugars", "Sugars", "Sugars", "Sugars", "Sugars", "Sugars", "Sugars"],
+    values: ["50", "25", "25", "25", "25", "25", "25", "25", "25", "25", "25"],
     date: "2023-05-12"
   },
   {
