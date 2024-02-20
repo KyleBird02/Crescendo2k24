@@ -220,3 +220,77 @@ label {
 
 /* ... (Rest of the CSS remains unchanged) */
 
+/*User Page */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-36 {
+  height: 9rem; /* 36px * 4 (1rem = 16px) */
+}
+
+.w-36 {
+  width: 9rem; /* 36px * 4 (1rem = 16px) */
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-4 {
+  gap: 1rem; /* 4 * 1rem (1rem = 16px) */
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-duration: 300ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+.md\:h-60 {
+  height: 15rem; /* 60px * 4 (1rem = 16px) */
+}
+
+.md\:w-60 {
+  width: 15rem; /* 60px * 4 (1rem = 16px) */
+}
+
+.rounded-lg {
+  border-radius: 0.5rem; /* 8px * 4 (1rem = 16px) */
+}
+
+/*!md:h-60 (no equivalent in pure CSS) */
+/*!md:w-60 (no equivalent in pure CSS) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

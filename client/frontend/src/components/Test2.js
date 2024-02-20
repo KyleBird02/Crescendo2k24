@@ -50,12 +50,12 @@ export default function Test2() {
       <br />
       <label>
         Substance Names:
-        <input type="text" value={substanceNames} onChange={(e) => setSubstanceNames(e.target.value)} />
+        <input type="text" value={substanceNames} onChange={(e) => setSubstanceNames(e.target.value.split(","))} />
       </label>
       <br />
       <label>
         Substance Measurements:
-        <input type="text" value={substanceMeasurements} onChange={(e) => setSubstanceMeasurements(e.target.value)} />
+        <input type="text" value={substanceMeasurements} onChange={(e) => setSubstanceMeasurements(e.target.value.split(","))} />
       </label>
       <br />
       <label>
