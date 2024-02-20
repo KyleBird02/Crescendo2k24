@@ -13,6 +13,8 @@ import ProductRoute from "./ProductRoute";
 import Product from "./Product";
 import {HashRouter as Router,Routes,Route} from 'react-router-dom';
 import { StorageProvider } from "./context/StorageContext";
+import ProtectedRoute from "./ProtectedRoute";
+import Test2 from "./components/Test2";
 
 const fakeItems = [
   {
@@ -87,6 +89,9 @@ root.render(
       <Navbar/>
       <Router>
             <Routes>
+                  <Route exact path="/fso" element={<ProtectedRoute/>}>
+                  <Route exact path = '/fso' element={<Test2/>}/>
+                  </Route>
                   <Route exact path = '/' element={<Cards items={fakeItems}/>}/>
                   <Route exact path = '/product' element={<ProductRoute/>}>
                     <Route exact path='/product' element={<Product/>}/>

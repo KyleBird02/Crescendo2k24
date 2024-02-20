@@ -1,4 +1,5 @@
 import React, { useContext , useState} from 'react';
+import { useAddress } from "@thirdweb-dev/react";
 
 
 const StorageContext = React.createContext();
@@ -9,12 +10,13 @@ export function useStore(){
 
 
 export function StorageProvider({children}) {
-
+    const address = useAddress();
     const [curr,setCurr] = useState({});
 
     const value = {
         setCurr,
         curr,
+        address
     }
 
     return (
