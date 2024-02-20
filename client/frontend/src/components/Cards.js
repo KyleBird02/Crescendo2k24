@@ -35,19 +35,26 @@ export default function Cards({ items }) {
     <div className="product-page">
       <div className="header">
         <h1>Item Select</h1>
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search..." />
+        </div>
       </div>
       <div className="card-container">
         {items.map((item, index) => (
-          <div key={index} className="card transition-all">
+          <div
+            key={index}
+            className="card transition-all"
+            onClick={() => {
+              setCurr(item);
+              navigate("/product");
+            }}
+          >
             {/* Render the content of each card */}
+            <div className="card-overlay">{item.productName}</div>
             <img
               className="prod-img"
               src={imageSetter(item.productName)}
               alt={`Image ${index}`}
-              onClick={() => {
-                setCurr(item);
-                navigate("/product");
-              }}
             />
             {/* Add more content here if needed */}
           </div>
