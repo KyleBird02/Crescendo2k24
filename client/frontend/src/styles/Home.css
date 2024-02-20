@@ -287,6 +287,17 @@ label {
   border-radius: 0.5rem; /* 8px * 4 (1rem = 16px) */
 }
 
+.card-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card{
+  min-width: 10vw;
+}
+
 /*!md:h-60 (no equivalent in pure CSS) */
 /*!md:w-60 (no equivalent in pure CSS) */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
