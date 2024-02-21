@@ -22,7 +22,7 @@ export default function Test2() {
   const [productName, setProductName] = useState("");
   const [substanceNames, setSubstanceNames] = useState([]);
   const [substanceMeasurements, setSubstanceMeasurements] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState("21/02/2024");
 
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
@@ -43,6 +43,11 @@ const checkedIcon = <CheckBoxIcon fontSize="small" />;
     try {
       await call(companyName, productName, substanceNames, substanceMeasurements, date)
       console.info("Contract call success");
+      setCompanyName("")
+      setProductName("")
+      setSubstanceNames([])
+      setSubstanceMeasurements([])
+      alert("Report was written to the chain successfully")
       // Optionally, you can reset input fields or perform other actions upon success
     } catch (err) {
       console.error("Contract call failure", err);
@@ -57,13 +62,14 @@ const checkedIcon = <CheckBoxIcon fontSize="small" />;
   };
   
   return (
-    <div>
+    <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", rowGap:"2em"}}>
+      <h1>Create Report</h1>
       <Autocomplete
       disablePortal
       id="combo-box-demo"
       options={["Kurkure","Brittania"]}
-      style={{ backgroundColor: "red" }}
-      sx={{ width: 300 }}
+      style={{ backgroundColor: "white",  padding : "10px", borderRadius: "8px" }}
+      sx={{ width: 500 }}
       onChange={(event, newValue) => {
         setCompanyName(newValue);
       }}
@@ -73,10 +79,10 @@ const checkedIcon = <CheckBoxIcon fontSize="small" />;
       disablePortal
       id="combo-box-demo"
       options={companyName==="Kurkure"?["Chilli Chatka","Hyderabadi Hungama"]:companyName==="Brittania"?["Chocochip Cookies","Cashew Cookies","Pista Cookies","Hazelnut Cookies","Butter Cookies"]:[]}
-      style={{ backgroundColor: "red" }}
-      sx={{ width: 300 }}
+      style={{ backgroundColor: "white",  padding : "10px", borderRadius: "8px" }}
+      sx={{ width: 500 }}
       onChange={(event, newValue) => {
-        setCompanyName(newValue);
+        setProductName(newValue);
       }}
       renderInput={(params) => <TextField {...params} label="Product" />}
     />
@@ -96,13 +102,14 @@ const checkedIcon = <CheckBoxIcon fontSize="small" />;
           {option}
         </li>
       )}
-      style={{ width: 500 , backgroundColor: "red"}}
+      style={{ width: 500 , backgroundColor: "white", padding : "10px", borderRadius: "8px"}}
       onChange={(event, value) => setSubstanceNames(value)}
       renderInput={(params) => (
         <TextField {...params} label="Additives" placeholder="Substances and Colouring Agents" />
       )}
     />
-    <TableContainer component={Paper}>
+    {substanceNames.length!=0 && 
+    <TableContainer component={Paper} style={{width : 500}}>
         <Table>
           <TableBody>
             {substanceNames.map((name, index) => (
@@ -118,9 +125,9 @@ const checkedIcon = <CheckBoxIcon fontSize="small" />;
             ))}
           </TableBody>
         </Table>
-      </TableContainer>
+      </TableContainer>}
       <button onClick={handleAddProduct} disabled={isLoading}>
-        {isLoading ? "Adding Product..." : "Add Product"}
+        {isLoading ? "Writing to Chain..." : "Submit Report"}
       </button>
     </div>
   );

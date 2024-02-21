@@ -28,6 +28,28 @@ export default function Product() {
     }
   }
 
+  const tolerableValues = {
+    "Butter" : 20,
+    "Sugars" : 50,
+    "Acetaldehyde" : 0.5,
+    "Yeasts" : 10,
+    "Verbanol" : 0.05,
+    "Whey" : 10,
+    "Vanillin" : 5,
+    "Turpentine" : 0.005,
+    "Caramel" : 1,
+    "FD&C Yellow No. 6" : 0.05,
+    "Spirulina Extract" : 0.5,
+    "Salt" : 20,
+    "Tomato Extract" : 2,
+    "Vegetable Juice" : 1,
+    "FD&C Red No. 2" : 0.5,
+    "Thymol" : 0.2,
+    "Toluene" : 0.05,
+    "Chilli Powder" : 1,
+    "FD&C Red No. 3" : 0.05
+  }
+
   return (
     <div className="product-highlight">
       <div className="prod-high">
@@ -54,7 +76,9 @@ export default function Product() {
                 <div className="chip" key={index}>
                   <h2 className="text-sm font-semibold text">{substance}</h2>
                   <h1 className="text-xl font-semibold text-gray-200">
-                    {curr.values[index]}
+                  <span style={{ color: curr.values[index] > tolerableValues[substance] ? "red" : "inherit" }}>
+  {curr.values[index]}
+</span>
                   </h1>
                 </div>
               ))}

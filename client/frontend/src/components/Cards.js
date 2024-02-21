@@ -34,7 +34,7 @@ export default function Cards({ items }) {
     })));
 }, [data, searchTerm]);
   
-  console.log()
+  console.log(data)
   const { setCurr } = useStore();
   const navigate = useNavigate();
 

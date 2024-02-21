@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div>
+      <div style={{display : "flex", flexDirection:"row-reverse", padding : "20px", justifyContent:"space-between"}}>
         {/* <button
           onClick={connect}
           style={{
@@ -31,6 +31,7 @@ const Navbar = () => {
           Connect Wallet
         </button> */}
         <ConnectWallet/>
+        <h1>FoodChain</h1>
       </div>
     </div>
   );
